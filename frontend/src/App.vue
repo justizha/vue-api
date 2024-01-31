@@ -20,7 +20,7 @@ export default {
   created() {
     axios.get('http://127.0.0.1:8000/api/data')
       .then(response => {
-        this.items = response.data.data; // Accessing response data
+        this.items = response.data.data; 
       })
       .catch(error => {
         console.error('Error fetching data:', error);
