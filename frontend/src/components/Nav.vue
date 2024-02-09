@@ -1,11 +1,9 @@
-<script>
-export default {
-    name: "Nav"
-}
+<script setup>
+
 </script>
 
 <template>
-    <nav class="bg-gray-800  w-full absolute py-2 top-0">
+    <nav class="bg-gray-900  w-full absolute py-2 top-0">
         <div class="flex justify-between mx-4">
             <h1 class="font-bold text-2xl text-white">
                 VUM
