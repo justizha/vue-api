@@ -23,27 +23,27 @@ class UserController extends Controller
     }
  }
 
- public function postUser(Request $request){
+ public function createUser(Request $request){
     try {
-        $validate_data = $request->validate([
-            'name' => 'required',
-            'email' => 'required'
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required'
         ]);
 
-        $user = User::create($validate_data);
+        $user = User::create($validatedData);
+
         return response()->json([
             'success' => true,
             'data' => $user,
             'message' => 'User created successfully'
         ], 201);
-
-
     } catch (\Exception $e) {
         return response()->json([
-            'success'=> false,
-            'message' => 'Failed to create a user'. $e->getMessage() 
-        ], 501);
+            'success' => false,
+            'message' => 'Failed to create user: ' . $e->getMessage(),
+        ], 500);
     }
- }
+}
 
 }
