@@ -7,21 +7,31 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function getData(){
+ public function getData(){
     try {
         $items = User::all(); 
-        return response()->json([
-            'success' => true,
-            'data' => $items,
-        ]);
-    } catch (\Exception $e) {
-        // Handle exceptions
+        return response()->json($items);
+        
+    } 
+    catch (\Exception $e) {
         return response()->json([
             'success' => false,
             'message' => 'Failed to fetch data: ' . $e->getMessage(),
         ], 500);
     }
- }
+  }
+ public function showUser($id){
+    try {
+        $item = User::find($id); 
+        return response()->json($item);
+    }
+     catch (\Exception $e) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Failed to fetch data: ' . $e->getMessage(),
+        ], 500);
+    }
+  }
 
  public function createUser(Request $request){
     try {
