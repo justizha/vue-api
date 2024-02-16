@@ -1,4 +1,5 @@
 <script lang="ts">
+
   interface User {
     id : number,
     name : string,
