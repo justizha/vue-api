@@ -1,5 +1,5 @@
 <template>
-    <nav class="py-1 w-full  flex justify-between  bg-gray-800">
+    <nav class="py-1 w-full  flex justify-between  bg-transparent">
         <div class="m-2">
             <h1 class="text-2xl font-bold dark:text-white">
                 Vue

@@ -23,8 +23,13 @@
 </script>
 <template>
   <section class="pt-20">
+    <div class="my-2 flex justify-center">
+      <router-link to="/user/create" class="bg-blue-700 hover:bg-blue-800 px-6 py-1 rounded text-white font-medium">
+        Add new User
+      </router-link>
+    </div>
     <div class="flex justify-center">
-        <table class="w-full max-w-3xl  text-sm text-left  text-gray-500 dark:text-gray-400">
+        <table class="w-full max-w-3xl text-sm text-left  text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
@@ -42,7 +47,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600" v-for="user in users" :key="user.id">
+                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" v-for="user in users" :key="user.id">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                       {{ user.id }}
                     </th>
@@ -53,7 +58,7 @@
                       {{ user.email }}
                     </td>
                     <td class="px-6 py-4">
-                      <router-link :to="{ name: 'UserDetail', params: { id: user.id } }">Detail</router-link>
+                      <router-link :to="{ name: 'UserDetail', params: { id: user.id }}" class="bg-blue-600 hover:bg-blue-700 p-1 rounded font-medium text-white">Detail</router-link>
                     </td>
                 </tr>  
             </tbody>
