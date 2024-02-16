@@ -20,7 +20,7 @@ class UserController extends Controller
             ], 500);
         }
     }
-    
+
     public function showUser($id){
         try {
             $item = User::find($id); 
@@ -57,13 +57,20 @@ class UserController extends Controller
         }
     }
 
-    public function deleteUser($id){
-        $user = User::find($id);
-        if(!$user){
-            return response()->json(404);
+    public function deleteUser(User $user) {
+        try {
+            $user->delete(); 
+            return response()->json([
+                'success' => true,
+                'message' => 'User deleted successfully'
+            ], 202);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to delete user: ' . $e->getMessage()
+            ], 501);
         }
-        $user->delete();
-        return response()->json(200);
     }
+
 
 }
