@@ -1,24 +1,24 @@
 <script lang="ts">
-interface User {
-  id : number,
-  name : string,
-  email : string
-}
-
-export default {
-  name : 'UserList',
-  data() {
-    return {
-      users: [] as User[]
-    }
-  },
-  mounted() {
-    fetch('http://127.0.0.1:8000/api/users')
-      .then(res => res.json())
-      .then((data: User[]) => this.users = data)
-      .catch(err => console.error(err.message))
+  interface User {
+    id : number,
+    name : string,
+    email : string
   }
-}
+
+  export default {
+    name : 'UserList',
+    data() {
+      return {
+        users: [] as User[]
+      }
+    },
+    mounted() {
+      fetch('http://127.0.0.1:8000/api/users')
+        .then(res => res.json())
+        .then((data: User[]) => this.users = data)
+        .catch(err => console.error(err.message))
+    }
+  }
 </script>
 <template>
   <section class="pt-20">

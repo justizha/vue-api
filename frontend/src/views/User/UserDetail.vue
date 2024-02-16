@@ -8,11 +8,11 @@
 
 
 <script lang="ts">
-interface User {
-    id: number,
-    name: string,
-    email: string
-}
+    interface User {
+        id: number,
+        name: string,
+        email: string
+    }
     export default {
         data(){
             return {
