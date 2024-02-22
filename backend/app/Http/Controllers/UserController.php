@@ -57,9 +57,11 @@ class UserController extends Controller
         }
     }
 
-    public function deleteUser(User $user) {
+    public function deleteUser(User $user)
+    {
         try {
-            $user->delete(); 
+            User::destroy($user->id); 
+
             return response()->json([
                 'success' => true,
                 'message' => 'User deleted successfully'

@@ -14,11 +14,33 @@
       }
     },
     mounted() {
-      fetch('http://127.0.0.1:8000/api/users')
-        .then(res => res.json())
-        .then((data: User[]) => this.users = data)
-        .catch(err => console.error(err.message))
+      this.fetchUsers()
     },
+    methods : {
+      fetchUsers(){
+        fetch('http://127.0.0.1:8000/api/users')
+          .then(res => res.json())
+          .then((data: User[]) => this.users = data)
+          .catch(err => console.error(err.message))
+      },
+      deleteUser(userId:any){
+        if(confirm("are you sure")){
+          fetch(`http://127.0.0.1:8000/api/users/${userId}`,{
+            method :'DELETE',
+          })
+          .then(res =>{
+              if(!res.ok){
+                throw new Error('failed to delete user')
+              }
+              {this.fetchUsers()}
+            }
+          )
+          .catch(error => {
+            console.error('Failed to delete user',error)
+          })
+        }
+      }
+    }
     
   }
 </script>
@@ -45,6 +67,9 @@
                     <th scope="col" class="px-6 py-3">
                       Detail
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                      action
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -60,6 +85,9 @@
                     </td>
                     <td class="px-6 py-4">
                       <router-link :to="{ name: 'UserDetail', params: { id: user.id }}" class="bg-blue-600 hover:bg-blue-700 p-1 rounded font-medium text-white">Detail</router-link>
+                    </td>
+                    <td class="px-6 py-4">
+                      <a @click="deleteUser(user.id)" class="cursor-pointer px-2 py-1 rounded bg-red-500 font-medium text-white">Delete</a>
                     </td>
                 </tr>  
             </tbody>
