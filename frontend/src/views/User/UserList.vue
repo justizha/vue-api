@@ -44,6 +44,7 @@
     
   }
 </script>
+
 <template>                    
   <section class="pt-20">
     <div class="my-2 flex justify-center">
