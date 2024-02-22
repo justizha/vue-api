@@ -18,10 +18,11 @@
         .then(res => res.json())
         .then((data: User[]) => this.users = data)
         .catch(err => console.error(err.message))
-    }
+    },
+    
   }
 </script>
-<template>
+<template>                    
   <section class="pt-20">
     <div class="my-2 flex justify-center">
       <router-link to="/user/create" class="bg-blue-700 hover:bg-blue-800 px-6 py-1 rounded text-white font-medium">
@@ -33,7 +34,7 @@
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
                     <th scope="col" class="px-6 py-3">
-                        Id
+                        Id 
                     </th>
                     <th scope="col" class="px-6 py-3">
                         Name
