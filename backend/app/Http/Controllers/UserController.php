@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Error;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -57,21 +58,17 @@ class UserController extends Controller
         }
     }
 
-    public function deleteUser(User $user)
+    public function deleteUser($id)
     {
-        try {
-            User::destroy($user->id); 
-
-            return response()->json([
-                'success' => true,
-                'message' => 'User deleted successfully'
-            ], 202);
-        } catch (\Exception $e) {
-            return response()->json([
-                'success' => false,
-                'message' => 'Failed to delete user: ' . $e->getMessage()
-            ], 501);
+        $user = User::findOrFail($id);
+        if($user)
+        {
+            $user->delete();
+        }else{
+            return response()->json("something went wrong");
         }
+        return response()->json('user deleted successfully');    
+
     }
 
 

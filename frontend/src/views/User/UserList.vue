@@ -18,14 +18,14 @@
     },
     methods : {
       fetchUsers(){
-        fetch('http://127.0.0.1:8000/api/users')
+        fetch('http://127.0.0.1:8000/api/user')
           .then(res => res.json())
           .then((data: User[]) => this.users = data)
           .catch(err => console.error(err.message))
       },
       deleteUser(userId:any){
         if(confirm("are you sure")){
-          fetch(`http://127.0.0.1:8000/api/users/${userId}`,{
+          fetch(`http://127.0.0.1:8000/api/user/delete/${userId}`,{
             method :'DELETE',
           })
           .then(res =>{
