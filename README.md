@@ -1,7 +1,7 @@
-Laravel 8 API with Vue 3 and TypeScript Example
-This project is an example of a Laravel 8 API integrated with Vue 3 using TypeScript.
+<h1>Vue & Laravel Api Example.</h1>
 
 Description
+<br />
 This project demonstrates the integration of Laravel 8 as a backend API with Vue 3 as the frontend framework, utilizing TypeScript for enhanced type safety and development experience.
 
 Features
