@@ -35,7 +35,7 @@
         },
         methods : {
             submitForm(){
-                fetch('http://127.0.0.1:8000/api/user',{
+                fetch('http://127.0.0.1:8000/api/user/create',{
                     method: 'POST',
                     headers: {
                     'Content-Type': 'application/json'
@@ -55,7 +55,8 @@
                 .catch(error => {
                     console.error("something went wrong",error)
                 })
-            }
+            },
+           
         }
     }
 </script>

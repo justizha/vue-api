@@ -39,6 +39,9 @@
             console.error('Failed to delete user',error)
           })
         }
+      },
+      NumberLoop(){
+        return this.users.length
       }
     }
     
