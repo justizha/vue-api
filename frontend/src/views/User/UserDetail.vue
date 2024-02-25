@@ -1,5 +1,4 @@
 <script lang="ts">
-import { Undo2 } from 'lucide-vue-next'
 interface User {
     id: number,
     name: string,
@@ -36,7 +35,7 @@ export default {
                 </p>
                 <div class="mt-2 flex justify-end">
                     <router-link to="/user" class="py-1 px-6 bg-blue-600 rounded-md text-white hover:bg-blue-700 font-medium">
-                            <Undo2/> Back
+                             Back
                     </router-link>
                 </div>
             </div>
