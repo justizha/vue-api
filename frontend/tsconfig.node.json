@@ -21,6 +21,7 @@
     "moduleResolution": "Bundler",
     "types": [
       "node"
-    ]
+    ],
+    "strict": false
   }
 }

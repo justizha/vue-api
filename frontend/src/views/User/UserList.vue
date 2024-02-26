@@ -1,52 +1,56 @@
 <script lang="ts">
-
+  // Define User interface
   interface User {
-    id : number,
-    name : string,
-    email : string
+    id: number;
+    name: string;
+    email: string;
+  }
+
+  // Define component data type
+  interface ComponentData {
+    users: User[];
   }
 
   export default {
-    name : 'UserList',
-    data() {
+    name: 'UserList',
+    data(): ComponentData {
       return {
-        users: [] as User[]
-      }
+        users: []
+      };
     },
     mounted() {
-      this.fetchUsers()
+      this.fetchUsers();
     },
-    methods : {
-      fetchUsers(){
+    methods: {
+      fetchUsers() {
         fetch('http://127.0.0.1:8000/api/user')
           .then(res => res.json())
           .then((data: User[]) => this.users = data)
-          .catch(err => console.error(err.message))
+          .catch(err => console.error(err.message));
       },
-      deleteUser(userId:any){
-        if(confirm("are you sure")){
-          fetch(`http://127.0.0.1:8000/api/user/delete/${userId}`,{
-            method :'DELETE',
+      deleteUser(userId: number): void {
+        if (confirm("Are you sure?")) {
+          fetch(`http://127.0.0.1:8000/api/user/delete/${userId}`, {
+            method: 'DELETE',
           })
-          .then(res =>{
-              if(!res.ok){
-                throw new Error('failed to delete user')
-              }
-              {this.fetchUsers()}
+          .then(res => {
+            if (!res.ok) {
+              throw new Error('Failed to delete user');
             }
-          )
-          .catch(error => {
-            console.error('Failed to delete user',error)
+            this.fetchUsers();
           })
+          .catch(error => {
+            console.error('Failed to delete user', error);
+          });
         }
       },
-      NumberLoop(){
-        return this.users.length
+      NumberLoop(): any {
+        return this.users.length;
       }
     }
-    
   }
 </script>
+
 
 <template>                    
   <section class="pt-20">
