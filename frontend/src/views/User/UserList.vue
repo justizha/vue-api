@@ -12,7 +12,7 @@
 
   export default {
     name: 'UserList',
-    data(): ComponentData {
+    data():ComponentData {
       return {
         users: []
       };
@@ -21,13 +21,13 @@
       this.fetchUsers();
     },
     methods: {
-      fetchUsers() {
+      fetchUsers():any {
         fetch('http://127.0.0.1:8000/api/user')
           .then(res => res.json())
           .then((data: User[]) => this.users = data)
           .catch(err => console.error(err.message));
       },
-      deleteUser(userId: number): void {
+      deleteUser(userId: number){
         if (confirm("Are you sure?")) {
           fetch(`http://127.0.0.1:8000/api/user/delete/${userId}`, {
             method: 'DELETE',
@@ -42,9 +42,6 @@
             console.error('Failed to delete user', error);
           });
         }
-      },
-      NumberLoop(): any {
-        return this.users.length;
       }
     }
   }

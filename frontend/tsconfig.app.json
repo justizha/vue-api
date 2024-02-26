@@ -1,5 +1,5 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "extends": "@vue/tsconfig/tsconfig.json",
   "include": [
     "env.d.ts",
     "src/**/*",
@@ -17,6 +17,12 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "strict": false,  
+    "noImplicitAny": false, 
+    "noImplicitThis": false,
+    "strictNullChecks": false, 
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": false 
   }
 }
