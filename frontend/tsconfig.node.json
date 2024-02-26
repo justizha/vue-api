@@ -9,6 +9,11 @@
   ],
   "compilerOptions": {
     "composite": true,
+    "paths": {
+      "@/*" :[
+        "./*"
+      ]
+    },
     "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "allowJs": true,
