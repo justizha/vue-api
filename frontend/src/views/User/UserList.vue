@@ -6,7 +6,6 @@
     email: string;
   }
 
-  // Define component data type
   interface ComponentData {
     users: User[];
   }
