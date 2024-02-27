@@ -22,6 +22,11 @@
     "types": [
       "node"
     ],
-    "strict": false
+    "strict": false,  
+    "noImplicitAny": false, 
+    "noImplicitThis": false,
+    "strictNullChecks": false, 
+    "strictFunctionTypes": false,
+    "strictPropertyInitialization": false 
   }
 }
