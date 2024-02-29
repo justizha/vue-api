@@ -8,13 +8,12 @@
                 <router-link to="/products" class="border bg-transparent border-blue-700 from-blue-800/30 via-blue-700 to-blue-600 p-1 rounded font-medium text-white hover:bg-gradient-to-l transition-all duration-300">
                     Product View
                 </router-link>
-                <router-link to="/" class="border bg-transparent border-blue-700 from-blue-800/30 via-blue-700 to-blue-600 p-1 rounded font-medium text-white hover:bg-gradient-to-l transition-all duration-300">
-                    Fake Store (Soon)
+                <router-link to="/notyet" class="border bg-transparent border-blue-700 from-blue-800/30 via-blue-700 to-blue-600 p-1 rounded font-medium text-white hover:bg-gradient-to-l transition-all duration-300">
+                    Fake Store (Soon)  
                 </router-link>
-                <router-link to="/" class="border bg-transparent border-blue-700 from-blue-800/30 via-blue-700 to-blue-600 p-1 rounded font-medium text-white hover:bg-gradient-to-l transition-all duration-300">
+                <router-link to="/notyet" class="border bg-transparent border-blue-700 from-blue-800/30 via-blue-700 to-blue-600 p-1 rounded font-medium text-white hover:bg-gradient-to-l transition-all duration-300">
                     Relation (Soon)
-                </router-link>
-                
+                </router-link>                
             </div>
         </div>
     </section>

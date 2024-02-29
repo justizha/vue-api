@@ -71,5 +71,22 @@ class UserController extends Controller
 
     }
 
+    public function updateUser(Request $request, User $user) {
+        try {
+            $user->update();
+            return response()->json([
+                'success' => true,
+                'data' => $user,
+                'message' => 'User updated successfully'
+            ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to update user: ' . $e->getMessage(),
+            ], 500);
+        }
+    }
+    
+
 
 }

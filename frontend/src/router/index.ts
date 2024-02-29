@@ -5,7 +5,7 @@ import UserCreateVue from '@/views/User/UserCreate.vue';
 import UserDetail from '@/views/User/UserDetail.vue';
 import UserListVue from '@/views/User/UserList.vue';
 import HomeIndexVue from '@/views/Home/HomeIndex.vue'
-
+import UserEditVue from '@/views/User/UserEdit.vue'
 
 import { createRouter, createWebHistory } from 'vue-router';
 
@@ -16,7 +16,8 @@ const routes = [
   {path: '/user/create',name: 'UserCreate', component: UserCreateVue},
   {path: '/login', name: 'Login', component : LoginFormVue},
   {path: '/register,', name : 'Register', component : RegisterFormVue},
-  {path: '/products', name : 'Products', component : IndexProductVue}
+  {path: '/products', name : 'Products', component : IndexProductVue},
+  {path: '/user/edit/:id', name : 'UserEdit' , component : UserEditVue}
 ];
 
 const router = createRouter({

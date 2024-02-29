@@ -1,33 +1,22 @@
-<script lang="ts">
-  // Define User interface
-  interface User {
-    id: number;
-    name: string;
-    email: string;
-  }
-
-  interface ComponentData {
-    users: User[];
-  }
-
+<script>
   export default {
     name: 'UserList',
-    data():ComponentData {
+    data(){
       return {
         users: []
       };
     },
     mounted() {
       this.fetchUsers();
-    },
+  },
     methods: {
       fetchUsers() {
         fetch('http://127.0.0.1:8000/api/user')
           .then(res => res.json())
-          .then((data: User[]) => this.users = data)
+          .then((data) => this.users = data)
           .catch(err => console.error(err.message));
       },
-      deleteUser(userId: number){
+      deleteUser(userId){
         if (confirm("Are you sure?")) {
           fetch(`http://127.0.0.1:8000/api/user/delete/${userId}`, {
             method: 'DELETE',
@@ -92,7 +81,7 @@
                     </td>
                     <td class="px-6 py-4">
                       <a @click="deleteUser(user.id)" class="cursor-pointer px-2 py-1 rounded bg-red-500 font-medium text-white">Delete</a>
-                      <router-link :to="{ name: 'UserDetail', params: { id: user.id }}" class="bg-yellow-500  p-1 rounded font-medium text-white">Edit</router-link>
+                      <router-link :to="{ name: 'UserEdit', params: { id: user.id }}" class="bg-yellow-500  p-1 rounded font-medium text-white">Edit</router-link>
                     </td>
                 </tr>  
             </tbody>

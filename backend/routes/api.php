@@ -21,6 +21,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get('/{id}', [UserController::class, 'showUser']);
     Route::post('/create', [UserController::class, 'createUser']);
     Route::delete('/delete/{id}', [UserController::class, 'deleteUser']);
+    Route::put('/update/{id}', [UserController::class, 'updateUser']);
 });
 
 Route::group(['prefix' => 'product'], function() {
