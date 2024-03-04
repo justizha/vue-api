@@ -84,7 +84,7 @@ export default {
                 >Detail</router-link
               >
             </td>
-            <td class="px-6 py-4">
+            <td class="flex gap-2 items-center py-4">
               <a
                 @click="deleteUser(user.id)"
                 class="cursor-pointer px-2 py-1 rounded bg-red-500 font-medium text-white"
@@ -92,7 +92,7 @@ export default {
               >
               <router-link
                 :to="{ name: 'UserEdit', params: { id: user.id } }"
-                class="bg-yellow-500 p-1 rounded font-medium text-white"
+                class="bg-yellow-500 px-4 py-1 rounded font-medium text-white"
                 >Edit</router-link
               >
             </td>

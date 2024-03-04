@@ -1,3 +1,5 @@
+<script setup></script>
+
 <template>
   <section class="relative mx-auto py-24">
     <div class="flex justify-center">
@@ -30,5 +32,3 @@
     </div>
   </section>
 </template>
-
-<script></script>
