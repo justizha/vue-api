@@ -20,11 +20,22 @@ export default {
 }
 </script>
 <template>
-  <section class="mx-2">
-    <div class="py-20 grid grid-cols-5 gap-2">
-      <div class="grid grid-cols-2" v-for="product in products" :key="product.id">
-        <h1 class="text-white truncate">{{ product.title }}</h1>
+  <section class="mx-auto flex justify-center">
+    <article class="py-20 grid grid-cols-4 gap-4 px-12">
+      <div v-for="product in products" :key="product.id">
+        <div
+          class="p-3 shadow dark:border dark:border-slate-500 rounded-t-lg flex flex-col justify-end w-full max-w-sm h-64"
+          :style="{ backgroundImage: `url(${product.image})` }"
+        ></div>
+        <div class="dark:bg-slate-800 w-full max-w-xs dark:text-white p-2 rounded-b h-32">
+          <h1 class="font-medium text-lg md:text-xl mb-2">
+            {{ product.title }}
+          </h1>
+          <p class="truncate text-sm">
+            {{ product.description }}
+          </p>
+        </div>
       </div>
-    </div>
+    </article>
   </section>
 </template>
