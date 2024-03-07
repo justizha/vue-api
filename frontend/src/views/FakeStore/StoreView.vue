@@ -21,13 +21,13 @@ export default {
 </script>
 <template>
   <section class="mx-auto flex justify-center">
-    <article class="py-20 grid grid-cols-4 gap-4 px-12">
+    <article class="py-20 grid  md:grid-cols-3 grid-cols-1 gap-3 px-12">
       <div v-for="product in products" :key="product.id">
         <div
-          class="p-3 shadow dark:border dark:border-slate-500 rounded-t-lg flex flex-col justify-end w-full max-w-sm h-64"
+          class="p-3 shadow dark:border dark:border-slate-500 rounded-t-lg flex flex-col justify-end w-full max-w-md h-52"
           :style="{ backgroundImage: `url(${product.image})` }"
         ></div>
-        <div class="dark:bg-slate-800 w-full max-w-xs dark:text-white p-2 rounded-b h-32">
+        <div class="dark:bg-slate-800 w-full max-w-md dark:text-white p-2 rounded-b h-52">
           <h1 class="font-medium text-lg md:text-xl mb-2">
             {{ product.title }}
           </h1>
