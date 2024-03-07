@@ -17,7 +17,7 @@
           Product View
         </router-link>
         <router-link
-          to="/notyet"
+          to="/store"
           class="border bg-transparent border-blue-700 from-blue-800/30 via-blue-700 to-blue-600 p-1 rounded font-medium text-white hover:bg-gradient-to-l transition-all duration-300"
         >
           Fake Store (Soon)
